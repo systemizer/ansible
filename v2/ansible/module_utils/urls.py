@@ -221,6 +221,8 @@ class SSLValidationHandler(urllib2.BaseHandler):
             os.write(tmp_fd, DUMMY_CA_CERT)
             # Default Homebrew path for OpenSSL certs 
             paths_checked.append('/usr/local/etc/openssl')
+            # Default Macports path for OpenSSL certs
+            paths_checked.append('/opt/local/etc/openssl')
 
         # for all of the paths, find any  .crt or .pem files
         # and compile them into single temp file for use
